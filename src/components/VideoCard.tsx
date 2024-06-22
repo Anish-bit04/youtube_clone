@@ -1,20 +1,25 @@
-import React from 'react'
+import React from "react";
 
-const VideoCard = () => {
+const VideoCard = (props:any) => {
   return (
     <div>
-        <img src="./image.png" alt="Image" />
-        <div className='grid grid-cols-12'>
-             <div className='col`-span-2'>
-                <img src="./image.png" alt="fddfb" /> </div>
-        <div className='col-span-10'>
-            Rust Tutorial For Beginners | Two Rust
-            Projects | Rust Notes Included | Hindi
-            Code Eater
+      <img src={props.thumbnailImage}alt="Image" />
+      <div className="grid grid-cols-12 mt-3">
+        <div className="col-span-1 gap-2">
+          <img
+            className="rounded-full h-12 w-12"
+            src={props.image}
+            alt="fddfb"
+          />
         </div>
+        <div className="col-span-11">
+          {props.title}
+          <div className="text-gray-400">{props.channelName}</div>
+          <div className="text-gray-400">{props.viewNo} · {props.timepassed} ago</div>
         </div>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default VideoCard
+export default VideoCard;
